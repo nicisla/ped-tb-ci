@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pediatric TB Symptom Review</title>
+    <!-- Include Bootstrap CSS with healthcare theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+" rel="stylesheet">
+    <!-- Include your custom CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #000000;
+            font-size: 35px;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+
+            font-size: 17px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+        }
+
+        .form-check-label {
+            font-weight: normal;
+        }
+
+        .form-check-input:checked + .form-check-label {
+            color: #28a745;
+        }
+
+        #additionalNotes {
+            resize: vertical;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .alert {
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+            color: #155724;
+            margin-top: 20px;
+            display: none;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pediatric TB - Symptoms Review</h1>
+
+        <form>
+            <div class="form-group">
+                <label for="patientName">Patient's Name:</label>
+                <input type="text" class="form-control" id="patientName" required>
+            </div>
+            <div class="form-group">
+                <label for="reviewDate">Review Date:</label>
+                <input type="date" class="form-control" id="reviewDate" required>
+            </div>
+        
+            <h3>Check if patient is experiencing the following:</h3>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="cough">
+                <label class="form-check-label" for="cough">Cough</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="fever">
+                <label class="form-check-label" for="fever">Fever</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="weightLoss">
+                <label class="form-check-label" for="weightLoss">Weight Loss</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="nightSweats">
+                <label class="form-check-label" for="nightSweats">Night Sweats</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="backOrChestPain">
+                <label class="form-check-label" for="backOrChestPain">Back or Chest pain</label>
+            </div>
+            <div class="form-group mt-3">
+                <label for="additionalNotes">Additional Notes (Other Symptoms):</label>
+                <textarea class="form-control" id="additionalNotes" rows="4"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit Review</button>
+        </form>
+        <div class="alert" role="alert" id="submitAlert"></div>
+    </div>
+
+
+    <!-- Firebase JS SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+
+    <!-- Your script -->
+    <script src="../src/symptoms.js"></script>
+
+</body>
+</html>
